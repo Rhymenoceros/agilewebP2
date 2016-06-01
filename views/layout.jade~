@@ -1,0 +1,63 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/stylesheet.css')
+    script(src="/socket.io/socket.io.js")
+    script(src="http://code.jquery.com/jquery-1.11.1.js")
+    script.
+        console.log('loading script');
+        var socket = io();
+        console.log('connected');
+        numMsg = 0;
+
+        function send(){
+          console.log('send');
+          var message = document.getElementById('message');
+          socket.emit('message', message.value);
+          message.value = '';
+        };
+	
+        socket.on('message', function(msg){
+          var messages = document.getElementById('messages');
+          if(messages.childNodes.length > 9){
+             messages.childNodes[numMsg].innerHTML = msg;
+             if(numMsg > 8) {
+             	numMsg = 0;
+             }
+             else{ 
+                numMsg++;
+             }
+             
+             
+          }
+          else{
+           var newText = document.createElement('li');
+           newText.innerHTML = msg;
+           messages.appendChild(newText);
+          }
+        });   
+  body
+    form#default(name='default', action='/register', method='post')
+      input#username(type='hidden', name='username', value='cits')
+      input#password(type='hidden', name='password', value='3403')
+    nav
+      div
+        ul
+          li
+            a(href="/")   Main Page 
+          | >
+          li
+            a(href='/what')  What is this?
+          li
+            a(href='/references')  References 
+          | >
+    section#blanksection
+      #content(width='50%', float='left')    
+      block content
+    
+          
+    footer
+      p#foot.greentxt  
+    script(src='/javascripts/script.js', async='')
+

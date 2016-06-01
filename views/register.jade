@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .container
+    header
+      h1 Registration Page
+    section
+      p Register here
+      p.helptxt You can use this to access the website from now on
+      br
+      form(action="/register",method="post")
+        label(for='username') Enter Username:
+        input(id='username', type = 'text', name = 'username')
+        label(for='password') Enter Password
+        input(id='password',type ='password', name='password')
+        input(type='submit', value='Register')

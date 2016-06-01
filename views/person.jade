@@ -1,0 +1,72 @@
+extends layout
+
+block content
+  .container
+     //h1#mainpage Main Page
+     #hackingtooldiv
+        button#minimizebtn(onclick='minimize()')
+          img(src='images/minimize.jpg', alt='-', width='15', height='15')
+        p#tabname  Hacking tab 
+        #hackingtool
+          p#per  error 
+          p
+            canvas#progressBar
+            #hackingtab
+              textarea#fakeinput(spellcheck='false', oninput='autoinput()')
+              if (!user)
+                  button#hacksubmit(onclick='run()')  Run 
+              if (user)
+                  button#hacksubmit(onclick='run2()')  Run 
+              
+        #minimized(hidden='')     
+  if (!user)
+    header
+      h1 Main Page
+    section
+      p.helptxt Try to Hack your way through the login page
+      form#login(action="/login",method="post")
+         label(for='username') Enter username:
+         input(id='username', type = 'text', name = 'username')
+         label(for='password') Enter password:
+         input(id='password', type = 'password', name = 'password')
+         input(type='submit', value='Submit')
+       #popup1(hidden='')
+        p Hacking Alert!
+        button(onclick='closepopup()') Close
+       #popup3(hidden='')
+        p Activate Firewall
+       #popup2(hidden='')
+        p Intruder!
+     
+    br
+      
+  if (user)
+    header 
+      h1 Main Page
+    section
+      p You are currently logged in as #{user.username}
+      p.helptxt Great hacking skills! You can now create your own account to log in 
+      a(href="/register") Register
+      br
+      a(href="/logout") Logout
+     
+      #popup4(hidden='')
+        p design doc found!
+        button#gotodesign(onClick="location.href='/design/'") Open
+    
+      p Welcome to the Message board, limit of 10 messages
+      #chatwindow
+        ul#messages
+        #msgForm
+          form(action="", onSubmit='return false;')
+              input(id="in" autocomplete="off")
+              button#gosh(type='button', onClick='send();') Send
+     
+      #bugdiv
+          a(href='/testing/')
+            img#bug(src='images/bug_tracking.jpg')
+          p#bugtxt A bug?  
+  
+          
+          
+          

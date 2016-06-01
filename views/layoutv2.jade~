@@ -1,0 +1,58 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/style.css')
+    script(src="/socket.io/socket.io.js")
+    script(src="http://code.jquery.com/jquery-1.11.1.js")
+    script.
+        console.log('loading script');
+        var socket = io();
+        console.log('connected');
+
+        function send(){
+          console.log('send');
+          var message = document.getElementById('message');
+          socket.emit('message', message.value);
+          message.value = '';
+        };
+
+        socket.on('message', function(msg){
+          var messages = document.getElementById('messages');
+          var newText = document.createElement('li');
+          newText.innerHTML = msg;
+          messages.appendChild(newText);
+        });
+
+  body
+
+    nav
+      div
+        ul
+          li
+            a(href='index.html')  Main Page 
+          | >
+          li
+            a(href='whatisthis.html')  What is this?
+          li
+            a(href='references.html')  References 
+          | >
+    header
+      h1  Blank Page :/ 
+    section#blanksection
+      #hackingtooldiv
+        button#minimizebtn(onclick='minimize()')
+          img(src='Resource/minimize.jpg', alt='-', width='15', height='15')
+        p#tabname  Hacking tab 
+        #hackingtool
+          p#per  error 
+          p
+            canvas#progressBar
+            #hackingtab
+              textarea#fakeinput(spellcheck='false', oninput='autoinput()')
+              button#hacksubmit(onclick='run()')  Run 
+        #minimized(hidden='')
+    footer
+      p#foot.greentxt  footer d
+    script(src='script.js', async='')
+

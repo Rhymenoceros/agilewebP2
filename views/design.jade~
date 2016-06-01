@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container
+    header
+      h1 Architecture & Design
+    section
+      h2.greentxt Architecture
+      p.greentxt
+        | greentxt My web application uses a Model-View-Controller architecture. This application uses Mongo as the database. Mongoose is used to enforce a schema for a Mongo database. Lastly express is used as means of handling routing and requests. In other words it has a simple MEAN architecture, however it does not use angular.
+      br
+      h2.greentxt Design choices
+      p.greentxt
+        | Along with the introduction of user accounts and a message board several other changes to the design of my original project was needed. To begin with rather then having seperate html files that contain a lot of duplicate information all the views have been written in jade and extend the 'layout' file. The 'layout' file contains the navigation bar and the footer since they are consistant accross all web pages. A function for each view needs to be added to the routes so that the views can be rendered when they a linked. An advantage of this format is that we can render parts of the page quicker given certain conditions, for example whether a user is logged in. It also makes it easier to add certain html elements such as the hacking tool to certain views.
+        p.greentxt
+         | Overall the style is still very similar to the style prsented in project 1. An additional page where the hacking tab can be used has been added. More 'secret' pages have been added (pages that arn't part of the main navigation).
+         br
+         br
+         h2.greentxt Difficulties
+         p.greentxt
+           | Overall there isn't very much dynamic content whithin this application. I found it difficult to add features such as the number of pages explored by the user. Due to initial time constrainst this app did not expand much functionality boyond what was presented in the SimpleApp template. 
+         
+      
+      

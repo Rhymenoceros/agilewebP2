@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .container
+     header
+      h1  Website Description
+    section
+      p.greentxt
+        | Have you ever watched a movie or tv show with a ridiculous
+        | hacking scene? The kind where the computer experts frantically tap on their keyboard and
+        | windows and graphs sporadically pop up. The video linked to the side is a great example.
+        | This website seeks to emulate these hacking tropes with the hopes of demonstrating just
+        | how absurd these scenes are and to raise awareness of how poorly understood the
+        | action of hacking is.
+        | This website was produced by Samuel Kooy.
+       
+      
+      iframe(width='700', height='380', src='https://www.youtube.com/embed/u8qgehH3kEQ', allowfullscreen='')
+      
+      p.greentxt
+          | Instructions:
+          | On the main page you will be greeted with a login in page. In order to
+          | further explore the website you need to hack to retrieve the username and
+          | password! 
+          em Hint: use the hacking tab.
+          br
+          br
+          | There will be other easter eggs that can be found when browsing.
+

@@ -1,0 +1,55 @@
+extends layout
+
+block content
+  .container
+     header
+      h1  Bio & Reference Page
+    section#whatsection
+      h2.greentxt  Samuel Kooy Bio
+      P.greentxt  Name: Samuel Kooy   		 
+      p.greentxt  Student Number: 21328536
+      p.greentxt  This website was created by me in 2016 as a university project. I am a student studying a Master of Information technology at the University of Western Australia.  
+      h2.greentxt  References
+      h4.greentxt  Source of information and objects used in the production of this website:  
+      p.greentxt
+        | Information and code to embed youtube video (accessed 20/04/2016)
+        br
+        a(href='https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds')
+          | https://developers.google.com/youtube/player_parameters#Manual_IFrame_Embeds
+        br
+        br
+        | 				 Source of the youtube video (accessed 20/04/2016)
+        br
+        a(href='https://www.youtube.com/watch?v=u8qgehH3kEQ')
+          | https://www.youtube.com/watch?v=u8qgehH3kEQ"
+        br
+        br
+        | 				Source for the minimize icon
+        br
+        a(href='https://image.freepik.com/free-icon/minimize_318-48564.jpg')
+          | https://image.freepik.com/free-icon/minimize_318-48564.jpg
+        br
+        br
+        | 				Source for csi font
+        br
+        a(href='http://fontmeme.com/freefonts/34872/csi_cream_source_inside.font')
+          | http://fontmeme.com/freefonts/34872/csi_cream_source_inside.font
+        br
+        br
+        | 				W3cschools for information on javascript, DOM, Css 
+        br
+        a(href='http://www.w3schools.com/js/')
+          | http://www.w3schools.com/js/
+        br
+        br
+        | 				Code for reading textfiles (accessed 17/04/2016)
+        br
+        a(href='http://stackoverflow.com/questions/14446447/javascript-read-local-text-file')
+          | http://stackoverflow.com/questions/14446447/javascript-read-local-text-file
+        br
+        br
+        |				Bug img 
+        br
+        a(href='https://leantesting.com/resources/bug-report/')  
+          | https://leantesting.com/resources/bug-report/
+    

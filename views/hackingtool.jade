@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .container
+     #hackingtooldiv
+        button#minimizebtn(onclick='minimize()')
+          img(src='images/minimize.jpg', alt='-', width='15', height='15')
+        p#tabname  Hacking tab 
+        #hackingtool
+          p#per  error 
+          p
+            canvas#progressBar
+            #hackingtab
+              textarea#fakeinput(spellcheck='false', oninput='autoinput()')
+              button#hacksubmit(onclick='run()')  Run 
+              
+        #minimized(hidden='')

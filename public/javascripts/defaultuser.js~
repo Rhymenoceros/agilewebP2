@@ -1,0 +1,1 @@
+ab.Account.insert({username: "cits", password:'3403'})
