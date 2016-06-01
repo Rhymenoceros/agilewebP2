@@ -37,7 +37,7 @@ describe('Account', function() {
     });
   });
 
-  it('Check a user has correct password', function(done) {
+  it('Check  user has correct password', function(done) {
     Account.findOne({ username: '12345' }, function(err, account) {
       account.password.should.eql('testy');
       console.log("   Password: ", account.password);
@@ -53,9 +53,7 @@ describe('Account', function() {
 
 });
 
-
-
-describe('Chat', function() {
+describe('Account', function() {
 
   before(function(done) {
     db = mongoose.connect('mongodb://localhost/test');
@@ -68,12 +66,12 @@ describe('Chat', function() {
   });
 
   beforeEach(function(done) {
-    var chat = new message({user: "User1",
-        message: "Hey",
-        time: new Date()
-      }
+    var account = new Account({
+      username: '12345',
+      password: 'testy'
+    }
     );
-    chat.save(function(error) {
+    account.save(function(error) {
       if (error) console.log('error' + error.message);
       else console.log('no error');
       done();
@@ -88,7 +86,7 @@ describe('Chat', function() {
     });
   });
 
-  it('Check is user has correct password', function(done) {
+  it('Check  user has correct password', function(done) {
     Account.findOne({ username: '12345' }, function(err, account) {
       account.password.should.eql('testy');
       console.log("   Password: ", account.password);
@@ -103,3 +101,7 @@ describe('Chat', function() {
   });
 
 });
+
+
+
+
